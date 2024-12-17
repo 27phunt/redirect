@@ -1,1 +1,26 @@
-
+<!DOCTYPE html><html><link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Space Mono' rel='stylesheet'><head><title>FRCS SmartPass</title><style>
+   select {font-family: 'Space Mono';font-size: 22px;text-align: center;font-size: 1.2em;padding: 0.5em 1em;
+   cursor: pointer;background-color: lightblue;color: black;border: none;border-radius: 5px;}
+   body {font-family: 'Space Mono';font-size: 22px;text-align: center;margin: 0;display: flex;
+   flex-direction: column;justify-content: center;align-items: center;background-color: #f7f7f7;}
+   
+   button.submit {font-family: 'Space Mono';font-size: 1.5em; text-align: center;cursor: pointer;
+   background-color: transparent;color: black;border: solid;border-radius: 5px;width:6em;height:2em;}
+   
+   button:hover {background-color: black;color: #f7f7f7;}
+   h2.hide {font-size: 0;padding: 0  0;}</style></head><body onload="onLoad()">
+   <hr><h1>iPad Logins</h1>
+   <h2 class="hide" id="username1"></h2><h1 class="hide"id="username2"></h1><hr>
+   <h2 class="hide" id="password1"></h2><h1 class="hide"id="password2"></h1><hr>
+   <form><select id="room" width="20em">
+   <option value="invalid" selected="selected">Select Room Number</option>
+    </select></form><hr><hr>
+   <button onclick="submit()" class="submit">View</button>
+  </body><script>
+   const sheet = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrMJjHUO4vZUiKNSLdvuGeTPCxP91raG3BL2YbL8UTh36UDLrhQK8rWnUau92vA5B2ou_3dpu45vFb/pub?gid=1912603995&single=true&output=csv"
+function onLoad() {fetch(sheet).then(r => r.text() ).then(t => onLoad1(t.split("\n")))}   
+function submit1(input) {
+var param = window.top.location.href.split["?"][1]
+window.top.location.href = input[Number(param)-1]
+}</script></html>
