@@ -2,7 +2,7 @@
 const sheet = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrMJjHUO4vZUiKNSLdvuGeTPCxP91raG3BL2YbL8UTh36UDLrhQK8rWnUau92vA5B2ou_3dpu45vFb/pub?gid=1912603995&single=true&output=csv"
 function onLoad() {fetch(sheet).then(r => r.text() ).then(t => run(t.split("\n")))}   
 function run(input) {
-var param = Number(window.top.location.href.split["?"][1])
+var param = Number(window.location.href.split["?"][1])
 alert(param)
 //window.top.location.href = input[Number(param)-1]
 }</script></html>
